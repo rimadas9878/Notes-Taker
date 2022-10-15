@@ -10,8 +10,14 @@ const app = express();
 
 //sending a get request to call index.html 
 app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, 'index.html'))
-})
+    res.sendFile(path.join(__dirname, 'Develop/public/index.html'))
+});
+
+//sending a get request to call notes.html
+app.get('/notes', (req,res) => {
+    res.sendFile(path.join(__dirname, 'Develop/public/notes.html'))
+});
+
 
 //This will display the message in the console
 app.listen(PORT, () => {
