@@ -2,20 +2,26 @@
 const express = require('express');
 const path = require('path');
 
-//Initializing the PORT
-const PORT = 3001;
-
 //Initializing the app variable
 const app = express();
 
+//Initializing the PORT
+const PORT = 3001;
+
+app.use(express.static('public'));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
 //sending a get request to call index.html 
 app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, 'Develop/public/index.html'))
+    res.sendFile(path.join(__dirname, 'public/index.html'))
 });
 
 //sending a get request to call notes.html
 app.get('/notes', (req,res) => {
-    res.sendFile(path.join(__dirname, 'Develop/public/notes.html'))
+    res.sendFile(path.join(__dirname, 'public/notes.html'))
 });
 
 
