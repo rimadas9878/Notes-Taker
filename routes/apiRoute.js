@@ -9,9 +9,13 @@ const {
     writeToFile,
 } = require('../helpers/fsUtils');
 
+//GET method to get all the added notes
 apiRoute.get('/', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
+
+//get with * will redirect to index page
+apiRoute.get("*", (req,res) => res.send('/index.js'));
 
 
 // POST Route for creating a new note
