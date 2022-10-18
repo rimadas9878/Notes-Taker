@@ -1,12 +1,1 @@
-[
-    {
-        "id": "5715",
-        "title": "Test Title",
-        "text": "Test text"
-    },
-    {
-        "title": "Fruits",
-        "text": "Apple",
-        "id": "71237089-da66-466a-bae2-f54ac567dc49"
-    }
-]
+[{"title":"Fruits","text":"Apple\nPineapple\nKiwi","id":"5b56b083-78ab-48ae-9b44-16a42b9b8bad"},{"title":"Movies","text":"Forrest Gump\nIron Man\nAvengers","id":"290e35b8-4499-4265-bcef-cfc585227136"}]

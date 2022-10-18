@@ -1,5 +1,6 @@
 const apiRoute = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
+const fs = require('fs')
 
 // const database = require('../db/db.json');
 const {
@@ -13,10 +14,11 @@ apiRoute.get('/', (req, res) => {
 });
 
 
-// POST Route for a new UX/UI tip
+// POST Route for creating a new note
 apiRoute.post('/', (req, res) => {
     console.log(req.body);
-  
+
+    //Adding data as per the content in database
     const {title, text} = req.body;
   
     if (req.body) {
@@ -34,7 +36,20 @@ apiRoute.post('/', (req, res) => {
   });
 
   
+//DELETE for deleting the created post
+apiRoute.delete('/:id', function(req, res){
 
+  //reading data from the database
+  let db = JSON.parse(fs.readFileSync('db/db.json'))
+
+  // deleting the note using id
+  let deleteNote = db.filter(record => record.id !== req.params.id);
+  console.log('Deleting note')
+
+  // Adding note to db.json
+  fs.writeFileSync('db/db.json', JSON.stringify(deleteNote));
+  res.json(deleteNote);
+})
 
 
 module.exports = apiRoute;
