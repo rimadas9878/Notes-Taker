@@ -9,6 +9,7 @@ Assignment 11 was to create an application called Note Taker that can be used to
 3. Once you add a Title and the test, save button will be displayed
 4. When clicked on the save button, the note will be added to the left section and to the database
 5. When clicked on the delete button, the note will be deleted from the left section, also from the database.
+6. To go back to the "Get Started" page just click on the title "Note Taker".
 
 
 ## Link to the github
@@ -17,7 +18,7 @@ https://github.com/rimadas9878/Notes-Taker
 
 ## Link of Heroku
 
-
+https://hidden-tor-52583.herokuapp.com/
 
 ## Image of the application
 
